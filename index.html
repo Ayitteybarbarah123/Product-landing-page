@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./bootstrap-4.3.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./bootstrap-4.3.1-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./fontawesome-free-5.14.0-web/css/all.css">
+    <link rel="stylesheet" href="./fontawesome-free-5.14.0-web/css/all.min.css">
+    <link rel="stylesheet" href="./fontawesome-free-5.14.0-web/css/fontawesome.css">
+    <link rel="stylesheet" href="./fontawesome-free-5.14.0-web/css/fontawesome.min.css">
+    <link rel="stylesheet" href="./fontawesome-free-5.14.0-web/css/brands.css">
+    <link rel="stylesheet" href="./fontawesome-free-5.14.0-web/webfonts/fa-brands-400.svg">
+    <title>Mommy's Guide Home Page</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: Gill Sans MT;
+        }
+        /* oo{
+            color: rgb(216, 62, 62);
+            /* text-decoration: underline orangered; 
+        }*/
+        .card{
+            transition: ease-in-out 0.5s;
+            width: 20rem;
+            box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.272);
+            
+        }
+        .card:hover{
+            background-color: rgba(255, 166, 0, 0.527);
+            margin-top: -5px;
+            /* animation-name: anoma;
+            animation-delay: 0.5s; */
+        }
+        /* .card-img-top{ */
+          /* width: 318px;
+          height: 318px; */
+          
+        
+        
+        .card-title{
+          font-family: Marcellus SC;
+        }
+        .navbar{
+          position: fixed;
+          background-color: rgba(128, 79, 79, 0.775);
+          width: 100%;
+          overflow: hidden;
+          z-index: 1;
+        }
+        .navbar-brand{
+            font-family: Gill Sans MT !important;
+            font-size: 20px;
+            color: white !important;
+        }
+        .nav-link{
+            font-size: 16px;
+            margin: 15px;
+            color: white !important;
+        }
+        .nav-link:hover{
+            color: rgb(154, 154, 255) !important;
+        }
+        .active .nav-link{
+            color: rgb(154, 154, 255) !important;
+        }
+        .nav-item::after{
+          content: '';
+          width: 0;
+          height: 2px;
+          background-color: white ;
+          display: block;
+          margin: auto;
+          transition: .5s;
+        }
+        .nav-item:hover::after{
+          width: 100%;
+        }
+        .menu-right-btn{
+            padding: 13px 46px;
+            margin-right: 4%;
+            background-color: transparent;
+            transition: all 300ms ease-in;
+            color: white;
+        }
+        .menu-right-btn:hover{
+            background-color: orangered;
+            color: white;
+        }
+        .d-flex{
+          position: relative;
+          left: 0;
+        }
+        .site-content{
+            background-image: url(./images/pregnw.jpg);
+            background-attachment: fixed;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .site-title{
+            color: rgb(128, 79, 79);
+            font-family: Gill Sans MT;
+            letter-spacing: 5px !important;
+        }
+        .site-desc{
+          padding-left: 15px;
+          color: rgba(105, 67, 67, 0.653);
+          font-family: Gill Sans MT;
+
+        }
+        .site-title{
+            margin-top: 30%;
+            margin-bottom: 6%;
+            text-align: center;
+            font-size: 50px;
+            font-family: Gill Sans MT;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 20px;
+        }
+        .btn-light{
+          margin-left: 40%;
+          width: 20%;
+          border: 3px solid rgb(128, 79, 79);
+          background-color: transparent;
+          color: rgb(128, 79, 79) !important;
+          font-family: Gill Sans MT;
+          transition: 0.5s ease-in-out;
+        }
+        .btn-light:hover{
+          background-color: rgb(128, 79, 79);
+          color: white !important;
+          border: none;
+        }
+        .section-1 .heading-1{
+          margin-top: 8%;
+        }
+        .section-1 .heading-2{
+          margin-bottom: 5%;
+        }
+        .section-1 .para-1{
+          width: 60%;
+          margin-left: 20%;
+          margin-bottom: 5%;
+          color: black;
+        }
+        .heading-1, .heading-2{
+            color: rgb(206, 55, 0);
+            font-family: Gill Sans MT;
+
+        }
+        .section-1 .card-text, .para-1{
+          color: black;
+        }
+        .section-1{
+          margin-bottom: 8%;
+        }
+        .section-2 .container-fluid{
+          background-image: url(./images/womanpreg.jpg);
+          background-size: cover;
+          background-attachment: fixed;
+        }
+        .section-2 .heading-1{
+          margin-top: 5%;
+          margin-bottom: 4%;
+          width: 80%;
+          color: white;
+          font-family: Gill Sans MT;
+        }
+        .section-2 .para{
+          width: 80%;
+          color: whitesmoke;
+          margin-bottom: 2%;
+          font-size: 17px;
+        }
+        .section-2 .btn{
+          margin-bottom: 10%;
+          width: 15%;
+          padding: 1%;
+        }
+
+        .section-3{
+          margin-top: 6%;
+        }
+        .section-3 i{
+          color: orangered;
+
+        }
+        .section-3 p{
+          color: black;
+        }
+        .section-4{
+          background-color: rgb(206, 55, 0) !important;
+          margin-top: 8%;
+        }
+        .section-4 .row .col-md-7,.col-md-5{
+          margin-top: 10%;
+          margin-bottom: 10%;
+        }
+        .section-4 a{
+          color: lightblue;
+          font-size: 30px;
+          text-emphasis: none;
+        }
+        
+        
+        .site-btn1, .site-btn2{
+            height: 50px;
+            /* border-radius: 60px; */
+            border-radius: 0;
+            margin-top: 5%;
+            margin-bottom: 40%;
+            align-items: center;
+            
+            
+        }
+        .site-btn1{
+            background-color: rgb(206, 55, 0) !important;
+            border: none;
+            margin-left: 0;
+        }
+        .site-btn2{
+            color: rgb(206, 55, 0) !important;
+        }
+        /* .btn-danger{
+            background-color: rgb(206, 55, 0) !important;
+            color: white;
+            border: 3px white solid;
+            width: 30%;
+        } */
+        .social .fab{
+            color:rgb(206, 55, 0) !important;
+            cursor: pointer;
+            transition: ease-in 0.5s;
+            font-size: larger;
+        }
+        .social .fab:hover{
+            color: black !important;
+        }
+        .para-1{
+          color: white;
+        }
+        .section-5 h5{
+          font-size: 10px;
+          line-height: 10%;
+        }
+
+        .news{
+          display: flex;
+        }
+        .news .card{
+          margin: 2% 3%;
+        }
+        .heading-11{
+          margin-right: auto;
+          margin-left: auto;
+          text-align: center;
+        }
+/* Newsletter */
+        /* Style the form element with a border around it */
+form {
+  /* border: 4px solid #f1f1f1; */
+  margin-top: 10%;
+  background-color: #f1f1f1;
+  font-family: Gill Sans MT;
+}
+
+/* Add some padding and a grey background color to containers */
+.container {
+  padding: 20px;
+  background-color: transparent;
+}
+
+/* Style the input elements and the submit button */
+input[type=text], input[type=submit] {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+
+/* Add margins to the checkbox */
+input[type=checkbox] {
+  margin-top: 16px;
+}
+
+/* Style the submit button */
+input[type=submit] {
+  background-color: rgb(206, 55, 0);;
+  color: white;
+  border: none;
+  transition: 0.5s ease-in-out;
+}
+
+input[type=submit]:hover {
+  opacity: 0.8;
+}
+        /* @keyframes anoma{
+            from{
+                height: 0%;
+                width: 100%;
+            }
+            to{
+                height: 0%;
+                width: 100%;
+            }
+        } */
+    </style>
+  </head>
+  <body>
+    
+
+    <main>
+      <header>
+      <nav class="navbar navbar-expand-lg navbar-light">
+          <!-- &#128227; -->
+        <a href="#" class="navbar-brand ml-3"><oo>MOMMY'S GUIDE</oo></a>
+        <!-- toggler -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarMenu"
+          aria-controls="#navbarMenu"
+          aria-expanded="false"
+          aria-label="Toggle Navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- add menu items and move to center -->
+        <div class="collapse navbar-collapse"></div>
+        <div class="collapse navbar-collapse" id="navbarMenu">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a href="#" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Pregnant</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">New-Mother</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Health-Worker</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Products</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Help</a>
+            </li>
+          </ul>
+          <!-- <form class="form-inline my-2 my-lg-0">
+            <button class="btn menu-right-btn border" type="submit">
+              Signup
+            </button>
+          </form> -->
+        </div>
+      </nav>
+    </header>
+      <div class="container-fluid p-0">
+        <div class="site-content">
+          <div class="d-flex justify-content-center">
+            <div class="d-flex flex-column">
+              <h1 class="site-title">Motherhood is joyous</h1>
+              <!-- <p class="site-desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit,
+                possimus.
+              </p> -->
+              <div class="d-flex flex-row">
+                <!-- <input
+                  type="button"
+                  value="Explore"
+                  class="btn site-btn1 px-3 py-2 mr-3 btn-dark"
+                /> -->
+                <input
+                  type="button"
+                  value="Read More"
+                  class="btn site-btn2 px-3 py-2 mr-3 btn-light"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-1">
+          <div class="container text-center">
+              <h3 class="heading-1">Your Pregnancy Week-By-Week</h3>
+              <!-- <h3 class="heading-2">Anyway you can call it.</h3> -->
+              <p class="para-1"></p>
+
+              <div class="row justify-content-center text-center">
+                  <div class="col-md-4">
+                      <div class="card">
+                          <img src="/images/1st trimester.jpg" alt="picture" class="card-img-top">
+                          <div class="card-body">
+                              <h4 class="card-title">1st Trimester</h4>
+                              <p class="card-text">Within the first two months of pregnancy, your baby will develop from a ball of cells called a blastocyst to an embryo that will develop into a baby.</p>
+                              <p class="card-text">Some symptoms during this period are nausea, vomiting, cravings, heightened sense of smell and mood swings.</p>
+                              <p class="card-text"><a href="#">Read More</a></p>
+
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="col-md-4">
+                      <div class="card">
+                          <img src="/images/2nd trimester.jpg" alt="" class="card-img-top">
+                          <div class="card-body">
+                              <h4 class="card-title">2nd trimester</h4>
+                              <p class="card-text">In this two months, baby's sex will become apparent, his circulatory system will begin pumping blood and bones will harden.</p>
+                              <p class="card-text">Some symptoms during this period are round ligament pains, nipple changes, stretch marks and feeling the baby moving</p>
+                              <p class="card-text"><a href="#">Read More</a></p>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="col-md-4">
+                      <div class="card">
+                          <img src="/images/3rd trimestrer.jpg" alt="" class="card-img-top">
+                          <div class="card-body">
+                              <h4 class="card-title">Third Trimester?</h4>
+                              <p class="card-text"> Over the last 6-12 weeks of pregnancy, your baby's brain will be developing billions of neurons. His skin will fill out with baby fat as his body prepares for the outside world.</p>
+                              <p class="card-text">Some symptoms during this period are strong kicks from the baby, swollen feet, leaking breasts and frequent urination.<a href="#">Read More</a></p>
+                          </div>
+                      </div>
+  
+              </div>
+          </div>
+      </div>
+
+      <h3 class="heading-11">News / Tips About Pregnancy</h3>
+      <div class="news">
+        <div class="card" style="width: 400px;">
+          <img src="/images/pregyoga.png" alt="" class="card-img-top">
+          <div class="card-body">
+            <h4 class="card-title">Antibiotics Might Lower Effectiveness of Birth Control Pill</h4>
+            <p class="class-text">Doctors have long suspected it, but a comprehensive new study provides more evidence that antibiotics can reduce the effectiveness of birth control pills.....</p>
+            <a href="#" class="btn btn-primary">Read More</a>
+          </div>
+        </div>
+
+        <div class="card" style="width: 400px;">
+          <img src="/images/pregyoga.png" alt="" class="card-img-top">
+          <div class="card-body">
+            <h4 class="card-title">COVID-19 in Pregnancy: Here's What's Known So Far</h4>
+            <p class="class-text">A new review may offer guidance on women who contract COVID-19 during pregnancy. Pregnant women with COVID-19 are less likely to have symptoms than .....</p>
+            <a href="#" class="btn btn-primary">Read More</a>
+          </div>
+        </div>
+
+        <div class="card" style="width: 400px;">
+          <img src="/images/pregyoga.png" alt="" class="card-img-top">
+          <div class="card-body">
+            <h4 class="card-title">Could Antibiotics Make Breast Milk Less Healthy for Babies?</h4>
+            <p class="class-text">Mom's breast milk can be altered by antibiotics in ways that might harm an infant's health, according to a new study. The Canadian researchers were particularly concerned with ....</p>
+            <a href="#" class="btn btn-primary">Read More</a>
+          </div>
+        </div>
+
+        <div class="card" style="width: 400px;">
+          <img src="/images/pregyoga.png" alt="" class="card-img-top">
+          <div class="card-body">
+            <h4 class="card-title">Top 10 Healthy Exercises For Pregnant Women</h4>
+            <p class="class-text"></p>
+            <a href="#" class="btn btn-primary">Read More</a>
+          </div>
+        </div>
+
+        
+        </div>
+      </div>
+
+      <div class="section-2">
+          <div class="container-fluid">
+              <div class="d-flex justify-content-end">
+                  <div class="flex flex-column m-4">
+                    <h1 class="heading-1">Did You Know?</h1>
+                    <li class="para">A pregnant woman's blood volume increases by 40-50%. When pregnant, blood volume increases as much as 50% to help supply enough oxygenated blood to the foetus.
+                    </li>
+
+                    <li class="para">Your heart grows bigger while you're pregnant. To help pump all that extra blood around the body, the heart has to increase in size.
+                    </li>
+
+                    <li class="para">Your voice can change during pregnancy. With all the hormones coursing around a pregnant body, it's not surprising that there would be some changes. Another is that the voice can change. The rise in oestrogen and progesterone can cause swelling of the vocal folds, meaning some higher notes are lost and lower ones might appear.
+                    </li>
+
+                    <li class="para">Babies can hear their mother's voice from inside the womb. At about 18 weeks, a foetus is able to hear sounds. By 25-26 weeks, it is more responsive to noises and responds in the womb.
+                    </li>
+
+                    <li class="para">Your sense of smell can change. Pregnant women usually experience a heightened sense of smell in the first trimester — which can be a sign that you're pregnant in the first place. It may be an evolutionary way to help pregnant women avoid unsafe foods.
+                    </li>
+                    <input type="button" value="Learn More" class="btn btn-danger ddyk">
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      <div class="section-3">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-4">
+                      <div class="d-flex flex-row">
+                        <i class="fas fa-question fa-3x m-2"></i>
+                        <div class="d-flex flex-column">
+                            <h3 class="m-2">Pregnancy troubles</h3>
+                            <p class="m-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus iusto quos commodi sequi dolor eius fugit, repudiandae odio aut voluptates natus animi error, ullam reprehenderit consequatur illum. Mollitia, est quod.</p>
+                        </div>
+                      </div>
+                  </div>
+
+                  <div class="col-md-4">
+                      <div class="d-flex flex-row">
+                        <i class="fas fa-question fa-3x m-2"></i>
+                        <div class="d-flex flex-column">
+                            <h3 class="m-2">Ask a midwife</h3>
+                            <p class="m-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus iusto quos commodi sequi dolor eius fugit, repudiandae odio aut voluptates natus animi error, ullam reprehenderit consequatur illum. Mollitia, est quod.</p>
+                        </div>
+                      </div>
+                  </div>
+
+                  <div class="col-md-4">
+                      <div class="d-flex flex-row">
+                        <i class="fas fa-question fa-3x m-2"></i>
+                        <div class="d-flex flex-column">
+                            <h3 class="m-2">24/7 Supply</h3>
+                            <p class="m-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus iusto quos commodi sequi dolor eius fugit, repudiandae odio aut voluptates natus animi error, ullam reprehenderit consequatur illum. Mollitia, est quod.</p>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="row mt-3">
+                <div class="col-md-4">
+                    <div class="d-flex flex-row">
+                        <i class="fas fa-user-shield fa-3x m-2"></i>
+                        <div class="d-flex flex-column">
+                            <h3 class="m-2">Authorized</h3>
+                            <p class="m-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus iusto quos commodi sequi dolor eius fugit, repudiandae odio aut voluptates natus animi error, ullam reprehenderit consequatur illum. Mollitia, est quod.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="d-flex flex-row">
+                        <i class="fas fa-user-shield fa-3x m-2"></i>
+                        <div class="d-flex flex-column">
+                            <h3 class="m-2">Authorized</h3>
+                            <p class="m-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus iusto quos commodi sequi dolor eius fugit, repudiandae odio aut voluptates natus animi error, ullam reprehenderit consequatur illum. Mollitia, est quod.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="d-flex flex-row">
+                        <i class="fas fa-user-shield fa-3x m-2"></i>
+                        <div class="d-flex flex-column">
+                            <h3 class="m-2">Authorized</h3>
+                            <p class="m-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus iusto quos commodi sequi dolor eius fugit, repudiandae odio aut voluptates natus animi error, ullam reprehenderit consequatur illum. Mollitia, est quod.</p>
+                        </div>
+                    </div>
+                </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- <div class="section-4 bg-dark">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-7">
+                      <img src="./images/c.jpg" alt="fqaf" width="590">
+                  </div>
+                  <div class="col-md-5">
+                    <h1 class="text-white">Eat Gobe Seven Times A Week. </h1>
+                    <a href="#">Order For Yours Now</a>
+                    <p class="para-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, cum officia vel dolor nulla est voluptatibus asperiores eveniet. Molestias, fugiat vel! Placeat repellat eligendi laborum, reprehenderit quos libero omnis laboriosam.</p>
+                  </div>
+              </div>
+          </div>
+      </div> -->
+    </main>
+
+    <footer>
+        
+      <form action="action_page.php">
+        <div class="container">
+          <h2>Subscribe to our Newsletter</h2>
+        </div>
+      
+        <div class="container" style="background-color:transparent">
+          <input type="text" placeholder="Name" name="name" required>
+          <input type="text" placeholder="Email address" name="mail" required>
+          <label>
+            <input type="checkbox" checked="checked" name="subscribe"> Daily Newsletter
+          </label>
+        </div>
+      
+        <div class="container">
+          <input type="submit" value="Subscribe">
+        </div>
+      </form>
+
+        <!-- <div class="form-inline justify-content-center">
+            <input type="text" name="Email" id="email" placeholder="Email" size="40" class="form-control px-4 py-2">
+            <input type="button" value="cantact us" id="" class="btn btn-danger px-4 py-2">
+        </div> -->
+
+        <div class="social" style="margin: 10px;">
+            <div class="d-flex flex-row justify-content-center">
+                <i class="fab fa-instagram m-2" aria-hidden="true"><a href="#"></a></i>
+                <i class="fab fa-facebook m-2" aria-hidden="true"><a href="#"></a></i>
+                <i class="fab fa-twitter m-2" aria-hidden="true"><a href="#"></a></i>
+                <i class="fab fa-google-plus m-2" aria-hidden="true"><a href="#"></a></i>
+            </div>
+        </div>
+
+        <div class="section-5 text-center">
+          <h5>Developed by She-Unit </h5>
+          <h5 class="my-4">&copy; All Rights Reserved 2020</h5>
+      </div>
+    </footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+      window.sr = ScrollReveal({duration: 3000});
+      sr.reveal('.site-content .d-flex');
+      sr.reveal('.section-1 .card');
+      sr.reveal('.section-2 .d-flex');
+      sr.reveal('.section-3 .d-flex');
+      sr.reveal('.container');
+      sr.reveal('.section-4 .col-md-7, .col-md-5');
+
+    </script>
+  </body>
+</html>
